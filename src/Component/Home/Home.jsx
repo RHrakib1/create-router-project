@@ -6,8 +6,10 @@ import Footer from '../Footer/Footer'
 export default function Home() {
   return (
     <div>
-      <Navbar></Navbar>
+      <div className='max-w-6xl mx-auto'>
+        <Navbar></Navbar>
       <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   )
