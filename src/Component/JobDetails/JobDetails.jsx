@@ -1,18 +1,22 @@
 import React from 'react'
 import { useLoaderData, useParams } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
+import { savestorejobapply } from '../Utility/Utility';
 
 export default function JobDetails() {
-    const hendelapply = () => {
-        toast("Wow Applyes Jobs!");
-    }
 
     const storeJOb = useLoaderData()
     console.log("ase", storeJOb);
-    const jobid = useParams()
-    const idstore = parseInt(jobid.id)
+    const { id } = useParams()
+    const idstore = parseInt(id)
     const findjob = storeJOb.find(data => data.id == idstore)
     console.log(findjob);
+
+    const hendelapply = () => {
+        savestorejobapply(id)
+        toast("Wow Applyes Jobs!");
+    }
+
     return (
         <div>
             <h1 className='text-5xl font font-extrabold text-center my-5 mb-10'>Job Details</h1>
