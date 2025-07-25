@@ -1,7 +1,12 @@
 import React from 'react'
 import { useLoaderData, useParams } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function JobDetails() {
+    const hendelapply = () => {
+        toast("Wow Applyes Jobs!");
+    }
+
     const storeJOb = useLoaderData()
     console.log("ase", storeJOb);
     const jobid = useParams()
@@ -25,12 +30,13 @@ export default function JobDetails() {
                     <h2 className='text-center my-8 text-2xl font-extrabold'>Contact Information</h2>
                     <div className='space-y-2'>
                         <p><span className='font-bold'>Phone: </span>{findjob.contact_information.phone}</p>
-                    <p><span className='font-bold'>Emial: </span>{findjob.contact_information.email}</p>
-                    <p><span className='font-bold'>Address: </span>{findjob.contact_information.address}</p>
+                        <p><span className='font-bold'>Emial: </span>{findjob.contact_information.email}</p>
+                        <p><span className='font-bold'>Address: </span>{findjob.contact_information.address}</p>
                     </div>
-                    <button className='btn btn-primary'>Apply Now</button>
+                    <button onClick={hendelapply} className='btn btn-primary'>Apply Now</button>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }
