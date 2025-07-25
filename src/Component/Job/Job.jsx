@@ -1,9 +1,10 @@
 import React from 'react'
 import { IoLocationOutline } from "react-icons/io5";
 import { BsCurrencyDollar } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 
 export default function Job({ job }) {
-    const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary, job_description } = job
+    const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary, job_description } = job
     return (
         <div>
             <div className="card bg-base-100 w-96 shadow-sm">
@@ -32,7 +33,9 @@ export default function Job({ job }) {
                     </div>
 
                     <div className="card-actions">
-                        <button className="btn btn-primary">View Details</button>
+                        <Link to={`/job/${id}`}>
+                            <button className="btn btn-primary">View Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>

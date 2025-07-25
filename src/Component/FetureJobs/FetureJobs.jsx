@@ -18,7 +18,7 @@ export default function FetureJobs() {
                     feturejobsadd.slice(0, datalength).map(jobs => <Job job={jobs}></Job>)
                 }
             </div>
-            <div className='flex justify-center items-center'>
+            <div className={`${datalength === feturejobsadd.length ?'hidden':''} flex justify-center items-center ` }>
                 <button onClick={() => setdatalenght(feturejobsadd.length)} className='btn btn-primary'>See All Jobs</button>
             </div>
         </div>
